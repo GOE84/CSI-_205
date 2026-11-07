@@ -1,69 +1,42 @@
-import Image from "next/image";
+import Image from 'next/image';
+import { Badge } from "@/components/tailgrids/core/badge";
+import { Check, CheckCircle1, InfoCircle } from "@tailgrids/icons";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+export default function HomePage() {
+  return (<>
+    <section className="mx-auto my-6 max-w-3xl rounded-lg border border-gray-300 p-4 flex flex-col sm:flex-row gap-5">
+      <div className="sm:w-1/3 shrink-0">
+        <Image src="/images/phoom.jpg" alt="ภูมิ เดชอวยพรวงศ์" width={260} height={320} className="w-full max-w-64 mx-auto rounded-lg" />
+        <p className="mt-2 font-semibold">68051254 ภูมิ เดชอวยพรวงศ์</p>
+        <p className="text-sm">CSI205 Front-End Software Development</p>
+      </div>
+      <div>
+        <h1 className="font-bold text-xl mb-3">CSI205 Front-End Software Development</h1>
+        <p className="mb-3">แบบฝึกหัดการพัฒนาโปรแกรมส่วนหน้า ด้วย Next.js และ Tailwind CSS</p>
+        <ul className="list-disc pl-5 space-y-3">
+          <li> <Badge color="success" className="text-base">Calculator</Badge> เครื่องคิดเลขจากแบบฝึกหัด FSM</li>
+          <li> <Badge color="warning" className="text-base">Animation</Badge> การเคลื่อนที่และสะท้อนขอบด้วย React State และ Effect</li>
+          <li> <Badge color="rose" className="text-base">Todos</Badge> เพิ่ม แก้ไข ลบ กรอง แบ่งหน้า และบันทึกข้อมูลลง Local Storage</li>
+          <li> <Badge color="blue" className="text-base">Products & Carts</Badge> ระบบรายการสินค้าและตะกร้าสินค้าด้วย React Context</li>
+          <li> <Badge color="purple" className="text-base">Login & Logout</Badge> ระบบตรวจสอบสิทธิ์ผู้ใช้งาน (Authentication)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section className="mx-auto my-6 max-w-3xl rounded-lg border border-gray-300 p-4 flex flex-col sm:flex-row gap-5">
+      <div className='text-base'>
+        <h1 className="font-bold text-xl mb-8">About me</h1>
+        <p className="mb-2"> Hello, I’m Phoom. I am currently studying Computer Science at Sripatum University AI, Data Science, Machine Learning, and Deep Learning.</p>
+          <ul className="list-disc pl-5 space-y-3 text-sm mt-5 mb-5">
+          <li> <strong>Core Expertise:</strong> Machine Learning & Deep Learning architectures, Computer Vision (OpenCV, MediaPipe), Time-Series Forecasting (ARIMA, LSTM), and NLP.</li>
+          <li><strong>Currently working on:</strong> Local LLM optimization (Qwen, Gemma, Ollama) and testing model performance across hybrid environments</li>
+          <li><strong>Learning & Exploring:</strong> Quantitative Finance, Algorithmic Trading, and advanced Deep Learning applications. Fun fact: When I'm not training models, I'm probably analyzing market trends or exploring dropshipping data</li>
+        </ul>
+        <p className="mb-1"> Computer Science and Software Development</p>
+        <p className="mb-1"> Sripatum University</p>
+      </div>
+
+    </section>
+    </>
   );
 }
